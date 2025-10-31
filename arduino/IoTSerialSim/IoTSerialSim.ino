@@ -1,6 +1,3 @@
-// IoTSerialSim.ino - Simulador de sensores (Temperatura y Presion) via Serial
-// Envia lineas con el formato esperado por la app C++:
-//   ID=XXX;TYPE=T|P;VAL=nnn.nn\n
 #include <Arduino.h>
 
 // Configuracion
@@ -43,6 +40,5 @@ void loop() {
     toggleTemp = !toggleTemp;
   }
 
-  // Si quieres, puedes leer comandos por Serial aqui para cambiar IDs o rangos
-  // (opcional, no necesario para la practica)
+
 }

@@ -27,11 +27,11 @@ public:
     // Destructor: libera todos los nodos
     ~ListaSensor() { limpiar(); }
 
-    // Regla de 3 (parcial): deshabilitar copia/assign para esta mitad
+    
     ListaSensor(const ListaSensor&) = delete;
     ListaSensor& operator=(const ListaSensor&) = delete;
 
-    // Inserta al final
+    
     void insertarFinal(const T& valor) {
         Nodo<T>* n = new Nodo<T>(valor);
         if (!cabeza) {
