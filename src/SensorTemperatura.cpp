@@ -2,8 +2,8 @@
 #include <iostream>
 
 SensorTemperatura::~SensorTemperatura() {
-    // historial se destruye automáticamente liberando nodos
-    std::cout << "  [Destructor Sensor " << nombre << "] Liberando Lista Interna (Temperatura)...\n";
+    std::cout << "  [Destructor Sensor " << nombre << "] Liberando Lista Interna...\n";
+    // historial se destruye al salir del destructor de la clase miembro
 }
 
 void SensorTemperatura::agregarLectura(double valor) {
@@ -13,7 +13,7 @@ void SensorTemperatura::agregarLectura(double valor) {
 }
 
 void SensorTemperatura::procesarLectura() {
-    std::cout << "-> Procesando Sensor " << nombre << " (Temperatura) ...\n";
+    std::cout << "-> Procesando Sensor " << nombre << "...\n";
     float eliminado = 0.0f;
     if (historial.eliminarMinimo(eliminado)) {
         double prom = historial.promedio();

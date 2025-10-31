@@ -1,4 +1,5 @@
 #include "ListaGeneral.h"
+#include <cstring>
 
 ListaGeneral::~ListaGeneral() {
     std::cout << "\n--- Liberación de Memoria en Cascada ---\n";
@@ -42,4 +43,16 @@ void ListaGeneral::imprimirTodos() const {
         if (cur->sensor) cur->sensor->imprimirInfo();
         cur = cur->siguiente;
     }
+}
+
+SensorBase* ListaGeneral::buscarPorId(const char* id) const {
+    if (!id) return nullptr;
+    NodoGeneral* cur = cabeza;
+    while (cur) {
+        if (cur->sensor && std::strcmp(cur->sensor->getNombre(), id) == 0) {
+            return cur->sensor;
+        }
+        cur = cur->siguiente;
+    }
+    return nullptr;
 }

@@ -15,6 +15,8 @@ add_executable(iot_sensores
     src/SensorPresion.cpp
     src/ListaGeneral.h
     src/ListaGeneral.cpp
+    src/SerialWin.h
+    src/SerialWin.cpp
 )
 
 # On Windows, ensure console subsystem

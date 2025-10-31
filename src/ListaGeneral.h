@@ -32,6 +32,9 @@ public:
 
     // Recorre y muestra info
     void imprimirTodos() const;
+
+    // Buscar sensor por ID (nombre)
+    SensorBase* buscarPorId(const char* id) const;
 };
 
 #endif // LISTA_GENERAL_H

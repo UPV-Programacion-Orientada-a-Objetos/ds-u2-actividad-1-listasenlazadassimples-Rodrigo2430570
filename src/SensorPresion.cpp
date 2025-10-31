@@ -2,7 +2,7 @@
 #include <iostream>
 
 SensorPresion::~SensorPresion() {
-    std::cout << "  [Destructor Sensor " << nombre << "] Liberando Lista Interna (Presion)...\n";
+    std::cout << "  [Destructor Sensor " << nombre << "] Liberando Lista Interna...\n";
 }
 
 void SensorPresion::agregarLectura(double valor) {
@@ -12,7 +12,7 @@ void SensorPresion::agregarLectura(double valor) {
 }
 
 void SensorPresion::procesarLectura() {
-    std::cout << "-> Procesando Sensor " << nombre << " (Presion) ...\n";
+    std::cout << "-> Procesando Sensor " << nombre << "...\n";
     double prom = historial.promedio();
     if (historial.size() > 0) {
         std::cout << "[Sensor Presion] Promedio de lecturas: " << prom << ".\n";

@@ -3,6 +3,7 @@
 
 #include <cstddef>
 #include <iostream>
+#include <type_traits>
 
 // Nodo de lista enlazada simple
 template <typename T>
@@ -108,13 +109,20 @@ public:
     std::size_t size() const { return tam; }
 
     // Limpia toda la lista
+    // Helper: nombre de tipo para logs
+    static const char* tipoNombre() {
+        if (std::is_same<T, int>::value) return "int";
+        if (std::is_same<T, float>::value) return "float";
+        if (std::is_same<T, double>::value) return "double";
+        return "T";
+    }
+
     void limpiar() {
         Nodo<T>* cur = cabeza;
         while (cur) {
             Nodo<T>* tmp = cur;
             cur = cur->siguiente;
-            // Log mínimo opcional
-            // std::cout << "[Log] Liberando Nodo valor: " << tmp->dato << "\n";
+            std::cout << "    [Log] Nodo<" << tipoNombre() << "> " << tmp->dato << " liberado.\n";
             delete tmp;
         }
         cabeza = cola = nullptr;
